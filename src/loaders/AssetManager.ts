@@ -10,6 +10,9 @@ export type AssetKey = "cards" | "magic-words";
 export type LoadProgressCallback = (loaded: number, total: number) => void;
 
 export class AssetManager {
+  load(key: "cards"): Promise<Texture[]>;
+  load(key: "magic-words"): Promise<MagicWordsAssets>;
+  load(key: AssetKey): Promise<unknown>;
   load(key: AssetKey): Promise<unknown> {
     switch (key) {
       case "cards":
@@ -22,11 +25,11 @@ export class AssetManager {
   }
 
   getCardTextures(): Promise<Texture[]> {
-    return this.load("cards") as Promise<Texture[]>;
+    return this.load("cards");
   }
 
   getMagicWordsAssets(): Promise<MagicWordsAssets> {
-    return this.load("magic-words") as Promise<MagicWordsAssets>;
+    return this.load("magic-words");
   }
 
   async preloadAll(

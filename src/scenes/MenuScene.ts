@@ -122,7 +122,7 @@ export class MenuScene implements Scene {
       );
       if (idx >= 0) this.onSelect(this.menuBounds[idx].id);
     };
-    const canvas = this.app.canvas as HTMLCanvasElement;
+    const canvas = this.app.canvas;
     const onPointerMove = (e: { global: { x: number; y: number } }) => {
       const px = e.global.x;
       const py = e.global.y;
@@ -226,7 +226,7 @@ export class MenuScene implements Scene {
   }
 
   onExit(_headerSlot?: SceneHeaderSlot): void {
-    const canvas = this.app.canvas as HTMLCanvasElement;
+    const canvas = this.app.canvas;
     if (canvas) canvas.style.cursor = "default";
     if (this.menuListeners) {
       const { hitArea, onPointerDown, onPointerMove, onPointerOut } = this.menuListeners;

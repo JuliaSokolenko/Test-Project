@@ -97,4 +97,4 @@ src/
 Example:
 
 - Repo: `https://github.com/JuliaSokolenko/Test-Assignment.git`
-- Live: `https://your-username.github.io/game-developer-assignment/` (or your chosen host)
+- Live: `https://my-test-assignment.vercel.app/`

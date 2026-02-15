@@ -1,0 +1,6 @@
+/node_modules
+.vscode/*
+/dist
+/scripts
+.DS_Store
+*.log
